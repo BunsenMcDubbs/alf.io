@@ -17,6 +17,7 @@
 package alfio.manager.location;
 
 import alfio.config.Initializer;
+import alfio.config.support.ConditionalOnConfigurationPresentProperty;
 import alfio.manager.system.ConfigurationManager;
 import alfio.model.system.Configuration;
 import alfio.model.system.ConfigurationKeys;
@@ -27,6 +28,7 @@ import com.google.maps.model.LatLng;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -35,7 +37,7 @@ import java.util.TimeZone;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Component
-@Profile(Initializer.PROFILE_LIVE)
+@ConditionalOnConfigurationPresentProperty(ConfigurationKeys.MAPS_SERVER_API_KEY)
 public class DefaultLocationManager implements LocationManager {
 
     private static final AtomicReference<GeoApiContext> CTX = new AtomicReference<>();
