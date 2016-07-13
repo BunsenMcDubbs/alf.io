@@ -17,8 +17,6 @@
 package alfio.manager.location;
 
 import alfio.config.Initializer;
-import alfio.config.support.ConditionalOnConfigurationPresentProperty;
-import alfio.model.system.ConfigurationKeys;
 import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -26,7 +24,7 @@ import org.springframework.stereotype.Component;
 import java.util.TimeZone;
 
 @Component
-@ConditionalOnConfigurationPresentProperty(value = ConfigurationKeys.MAPS_SERVER_API_KEY, exists = false)
+@Profile(Initializer.PROFILE_DEV)
 public class MockLocationManager implements LocationManager {
     @Override
     public Pair<String, String> geocode(String address) {
