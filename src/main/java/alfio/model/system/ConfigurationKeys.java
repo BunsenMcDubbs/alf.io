@@ -37,8 +37,8 @@ public enum ConfigurationKeys {
     BASE_URL("Base application url", false, SettingCategory.GENERAL, ComponentType.TEXT, true, EnumSet.of(SYSTEM)),
     VAT_NR("VAT number", false, SettingCategory.GENERAL, ComponentType.TEXT, false, EnumSet.of(SYSTEM, ORGANIZATION)),
     
-    MAPS_SERVER_API_KEY("Google maps' server api key", false, SettingCategory.GENERAL, ComponentType.TEXT, true, EnumSet.of(SYSTEM)),
-    MAPS_CLIENT_API_KEY("Google maps' client api key", false, SettingCategory.GENERAL, ComponentType.TEXT, true, EnumSet.of(SYSTEM)),
+    MAPS_SERVER_API_KEY("Google maps' server api key", false, SettingCategory.GENERAL, ComponentType.TEXT, false, EnumSet.of(SYSTEM)),
+    MAPS_CLIENT_API_KEY("Google maps' client api key", false, SettingCategory.GENERAL, ComponentType.TEXT, false, EnumSet.of(SYSTEM)),
     
     STRIPE_SECRET_KEY("Stripe's secret key", false, SettingCategory.PAYMENT, ComponentType.TEXT, false, EnumSet.of(SYSTEM)),
     STRIPE_PUBLIC_KEY("Stripe's public key", false, SettingCategory.PAYMENT, ComponentType.TEXT, false, EnumSet.of(SYSTEM)),

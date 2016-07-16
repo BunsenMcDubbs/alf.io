@@ -245,7 +245,6 @@ public class ConfigurationManager {
     /**
      * Checks if the basic options have been already configured:
      * <ul>
-     *     <li>Google maps' api keys</li>
      *     <li>Base application URL</li>
      *     <li>E-Mail</li>
      * </ul>
